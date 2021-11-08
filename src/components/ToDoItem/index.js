@@ -3,9 +3,9 @@ import React from 'react';
 const ToDoItem = (props) => {
   return (
     <li>
-      <span>C</span>
+      <span onClick={props.onComplete}>C</span>
       <p>{props.text}</p>
-      <span>X</span>
+      <span onClick={props.onDelete}>X</span>
     </li>
   );
 };

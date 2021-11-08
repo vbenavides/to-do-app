@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const ToDoSearch = (id, placeholder, type) => {
+const ToDoSearch = ({ searchValue, setSearchValue }) => {
+  const onSearchValueChange = (e) => {
+    console.log(e.target.value);
+    setSearchValue(e.target.value);
+  };
+
   return (
     <label>
-      <input type='search' placeholder='Ingresa Texto' />
+      <input
+        onChange={onSearchValueChange}
+        placeholder='Ingresa Texto'
+        value={searchValue}
+        type='search'
+      />
+      <p>{searchValue}</p>
     </label>
   );
 };
